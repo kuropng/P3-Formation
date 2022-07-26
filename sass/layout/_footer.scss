@@ -1,0 +1,29 @@
+.mfp {
+  margin: 0px;
+  padding: 30px;
+  background-color: darkgray;
+  color: #fff;
+
+  > h2{
+    color: white;
+  }
+
+  &__ul{
+    color: #fff;
+  }
+
+  &__logo{
+    height: 25px;
+    color: #fff;
+    padding-bottom: 10px;
+  }
+
+  &__nav{}
+
+  fa-solid{
+    color: black;
+  }
+
+  &__link{}
+  
+}
