@@ -173,10 +173,15 @@
     gap: 25px;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    animation-name: display;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
 
-    @for $i from 1 through 3 {
-      animation-delay: $i * 1s;
-      animation: display 1s forwards 3s infinite;
+  @for $i from 1 through 3 {
+    .menu-part:nth-child(#{$i}){
+      animation-delay: calc($i*1s);
     }
   }
 
@@ -208,7 +213,7 @@
 
 @keyframes display{
   from{
-    opacity: 1;
+    opacity: 0;
   }
 
   to{

@@ -654,16 +654,25 @@ ul {
   gap: 25px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  -webkit-animation-name: display;
+          animation-name: display;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.menu .menu-part:nth-child(1) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
-  -webkit-animation: display 1s forwards 3s infinite;
-          animation: display 1s forwards 3s infinite;
+}
+.menu .menu-part:nth-child(2) {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
-  animation: display 1s forwards 3s infinite;
+}
+.menu .menu-part:nth-child(3) {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
-  animation: display 1s forwards 3s infinite;
 }
 .menu__proposal {
   width: 100%;
@@ -687,7 +696,7 @@ ul {
 
 @-webkit-keyframes display {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -696,7 +705,7 @@ ul {
 
 @keyframes display {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
     opacity: 1;
