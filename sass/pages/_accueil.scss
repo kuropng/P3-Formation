@@ -1,0 +1,179 @@
+.explanation {
+  text-align: center;
+  padding: 35px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 4px inset;
+
+  &__title{
+    font-size: 1.8rem;
+  }
+
+  &__subtext{}
+
+  &__btn{
+  }
+  
+}
+  
+.functioning {
+  padding: 20px;
+
+  @media screen and (min-width: 1000px) {
+    padding: 60px;
+  }
+
+  &__title{
+    margin: 30px 0px 20px 0px;
+  }
+
+  &__all-step{
+    padding-left: 10px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__step{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 25px;
+    height: 70px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    > i {
+      padding-left: 10%;
+    }
+
+    @media screen and (min-width: 800px) {
+      width: 31%;
+      margin-top: 30px;
+    }
+  }
+
+  &__subtext{
+    display: flex;
+    justify-content: center;
+    margin-right: 8%;
+  }
+
+  &__btn{
+    position: absolute;
+    left: -15px;
+    border-radius: 50%;
+    border: 0;
+    line-height: 25px;
+    width: 25px;
+    background-color: $color-primary;
+    color: white;
+  }
+  
+  
+}
+
+.overview {
+  padding: 15px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 1000px) {
+    padding: 60px;
+  }
+
+  &__layout{
+    @media screen and (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      gap: 2%;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 1000px) {
+      gap: 1%;
+      justify-content: space-between;
+    }
+  }
+
+  &__title{}
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 25px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media screen and (min-width: 600px) {
+    width: 49%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 24%;
+  }
+
+  &:hover .anim__heart--colors{
+    animation: try 1s forwards;
+  }
+
+  &:hover .anim__heart{
+    opacity: 0;
+  }
+
+  &__new::after{
+    content: 'Nouveau';
+    position: absolute;
+    line-height: 20px;
+    width: 25%;
+    border-radius: 2px;
+    background-color: $color-tertiary;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    right: 10px;
+    top: 10px;
+  }
+
+  &__img{
+    height: 100%;
+    object-fit: cover;
+    margin: 0px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &__container-img{
+    height: 150px;
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+  }
+
+  &__title{
+    margin: 0px;
+  }
+
+  &__subtext{
+    margin: 0;
+  }
+
+  &__icon{
+    line-height: 25px;
+
+    &:hover .anim__heart--colors {
+      animation: try 1s forwards;
+    }
+
+    &:hover .anim__heart{
+      opacity: 0;
+    }
+  }
+}

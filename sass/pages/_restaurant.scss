@@ -1,0 +1,157 @@
+.menu__img{
+	height: 200px;
+	object-fit: cover;
+	margin: 0px;
+}
+  
+.menu{
+	border-radius: 15px 15px 0px 0px;
+	background-color: #fff; 
+	position: relative;
+	top: -15px;
+	padding: 30px;
+
+	@media screen and (min-width:800px){
+		padding: 15px;
+	}
+
+	@media screen and (min-width:950px){
+		
+		padding: 60px 60px 30px 60px;
+	}
+
+	&__layout{
+		@media screen and (min-width:800px){
+			display: flex;
+			gap: 2%;
+		}
+	}
+
+	&__section{
+		@media screen and (min-width:800px){
+			width: 32%;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		padding: 40px;
+
+		@media screen and (min-width:800px){
+			padding: 30px 40px 0px 40px;
+		}
+	}
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 20px 20px 0px 0px;
+	}
+
+	&__underline{
+		height: 3px;
+		width: 65px;
+		background: mediumaquamarine;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+
+	&__title{
+		margin: 0;
+		&--primary{
+			margin: 0px;
+			font-family: 'Shrikhand', cursive;
+		}
+		&--secondary{
+			margin-bottom: 3px;
+		}
+	}
+
+	&__part{
+		gap: 25px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@for $i from 1 through 3 {
+		.menu__proposal:nth-child(#{$i}){ 
+			animation-delay: calc($i*1s);
+		}
+	}
+
+	&__proposal{
+		width: 100%;
+		border-radius: 15px;
+		box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+		position: relative;
+		overflow: hidden;
+		opacity: 0;
+		animation-name: transitionApparition;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		
+
+		&:hover .width {
+			width: 80%;
+			transition: 1s ease;
+		}
+
+		&:hover .anim__rotate {
+			left: 80%;
+			transition: 1s ease;
+		}
+
+		&:hover .anim__rotate svg {
+			transform: rotate(360deg);
+			transition: 1s ease;
+		}
+	}
+  
+}
+  
+.proposal{
+  
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+		transition-duration: 0.5s; 
+	}
+
+	&__heading{
+		overflow: hidden;
+		padding-left: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		> * {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		}
+
+		> p {
+		margin: 5px 5px 5px 0px;
+		}
+
+		> h3 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		font-size: 20px;
+		}
+	}
+
+	&__price{
+		display: flex;
+		justify-content: flex-end;
+		margin: 0rem 1rem 0rem 1rem;
+		max-width: 100%;
+
+		> span {
+			font-weight: bold;
+		}
+	}
+}
