@@ -36,6 +36,11 @@
   &__all-step{
     padding-left: 10px;
     margin-bottom: 40px;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__step{
@@ -48,12 +53,18 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     > i {
-      padding-left: 40px;
+      padding-left: 10%;
+    }
+
+    @media screen and (min-width: 800px) {
+      width: 31%;
     }
   }
 
   &__subtext{
-    margin: 0px 0px 0px 25px;
+    display: flex;
+    justify-content: center;
+    margin-right: 8%;
   }
 
   &__btn{
@@ -73,6 +84,20 @@
   padding: 15px;
   margin-bottom: 40px;
 
+  &__layout{
+    @media screen and (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      gap: 2%;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 1000px) {
+      gap: 1%;
+      justify-content: space-between;
+    }
+  }
+
   &__title{}
 
 }
@@ -83,6 +108,22 @@
   margin-top: 25px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media screen and (min-width: 600px) {
+    width: 49%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 24%;
+  }
+
+  &:hover .anim__heart--colors{
+    animation: try 1s forwards;
+  }
+
+  &:hover .anim__heart{
+    opacity: 0;
+  }
 
   &__new::after{
     content: 'Nouveau';
@@ -127,17 +168,28 @@
   &__icon{
     line-height: 25px;
 
-    &:hover .svg_transform{
-      fill: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(208,51,255,1) 50%, rgba(255,121,218,1) 100%);
-      stroke: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(208,51,255,1) 50%, rgba(255,121,218,1) 100%);
+    &:hover .anim__heart--colors {
+      animation: try 1s forwards;
+    }
+
+    &:hover .anim__heart{
+      opacity: 0;
     }
   }
+}
 
-  &:hover .svg_transform{
-    fill: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(208,51,255,1) 50%, rgba(255,121,218,1) 100%);
-    stroke: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(208,51,255,1) 50%, rgba(255,121,218,1) 100%);
+@keyframes try{
+  0%{
+    opacity: 0;
   }
 
+  1%{
+    z-index: 10;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
 
 .menu__img{
@@ -153,11 +205,50 @@
   top: -15px;
   padding: 30px;
 
+  @media screen and (min-width:800px){
+    padding: 15px;
+  }
+
+  @media screen and (min-width:950px){
+    padding: 30px;
+  }
+
+  &__layout{
+    @media screen and (min-width:800px){
+      display: flex;
+      gap: 2%;
+    }
+  }
+
+  &__section{
+    @media screen and (min-width:800px){
+      width: 32%;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+
+    @media screen and (min-width:800px){
+      padding: 30px 40px 0px 40px;
+    }
+  }
+
   &__heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 20px 0px 0px;
+  }
+
+  &__underline{
+    height: 3px;
+    width: 65px;
+    background: mediumaquamarine;
+    border-radius: 5px;
+    margin-bottom: 20px;
   }
 
   &__title{
@@ -166,21 +257,19 @@
       margin: 0px;
       font-family: 'Shrikhand', cursive;
     }
-    &--secondary{}
+    &--secondary{
+      margin-bottom: 3px;
+    }
   }
 
-  &-part{
+  &__part{
     gap: 25px;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    animation-name: display;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
   }
 
   @for $i from 1 through 3 {
-    .menu-part:nth-child(#{$i}){
+    .menu__proposal:nth-child(#{$i}){ 
       animation-delay: calc($i*1s);
     }
   }
@@ -191,6 +280,10 @@
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    animation-name: transitionApparition;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
     
 
     &:hover .width {
@@ -211,13 +304,15 @@
 
 }
 
-@keyframes display{
-  from{
+@keyframes transitionApparition{
+  0%{
     opacity: 0;
+    transform: translateY(10px);
   }
 
-  to{
+  100%{
     opacity: 1;
+    transform: translateX(0px);
   }
 }
 
@@ -233,7 +328,9 @@
 
   &__heading{
     overflow: hidden;
-    padding-left: 1rem;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
     > * {
     overflow: hidden;
@@ -241,8 +338,13 @@
     white-space: nowrap;
     }
 
+    > p {
+      margin: 5px;
+    }
+
     > h3 {
-      margin-bottom: 0px;
+      margin-top: 5px;
+      margin-bottom: 5px;
       font-size: 20px;
     }
   }
@@ -252,6 +354,10 @@
     justify-content: flex-end;
     margin: 0rem 1rem 0rem 1rem;
     max-width: 100%;
+
+    > span {
+      font-weight: bold;
+    }
   }
 }
 
@@ -277,6 +383,37 @@
     fill: white;
     height: 30px;
     width: 30px;
+  }
+
+  &__heart{
+    height: 24px;
+    width: 24px;
+    position: relative;
+
+    &--title{
+      position: absolute;
+      right: 49px;
+      height: 27px;
+      width: 27px;
+      opacity: 0;
+
+      &:hover {
+        animation: try 1s forwards;
+      }
+  
+      &:hover .anim__heart {
+        opacity: 0; 
+      }
+    }
+
+    &--colors{
+      position: absolute;
+      right: 13px;
+      bottom: 29px;
+      height: 27px;
+      width: 27px;
+      opacity: 0;
+    }
   }
 }
 

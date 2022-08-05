@@ -1,15 +1,24 @@
 .mfp {
   margin: 0px;
   padding: 30px;
-  background-color: darkgray;
+  background-color: #222;
   color: #fff;
 
-  > h2{
+  span{
     color: white;
   }
 
+  &__title{
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    font-family: 'Shrikhand', Arial;
+  }
+
   &__ul{
-    color: #fff;
+    > li {
+      margin-top: 8px;
+    }
   }
 
   &__logo{

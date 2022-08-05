@@ -31,7 +31,7 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
+  font-size: 28px;
   margin: 0.67em 0;
 }
 
@@ -314,10 +314,6 @@ template {
   font-family: "Roboto Flex", sans-serif;
 }
 
-html {
-  width: 400px;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -332,23 +328,39 @@ ul {
   border-radius: 30px;
   border: 0px;
   padding: 15px;
+  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
   color: white;
   font-weight: 500;
   font-size: 1rem;
 }
+@media screen and (min-width: 900px) {
+  .btn {
+    width: 15%;
+  }
+}
+.btn:hover {
+  background: rgb(147, 86, 220);
+  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
+}
 
 .mfp {
   margin: 0px;
   padding: 30px;
-  background-color: darkgray;
+  background-color: #222;
   color: #fff;
 }
-.mfp > h2 {
+.mfp span {
   color: white;
 }
-.mfp__ul {
-  color: #fff;
+.mfp__title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-family: "Shrikhand", Arial;
+}
+.mfp__ul > li {
+  margin-top: 8px;
 }
 .mfp__logo {
   height: 25px;
@@ -404,8 +416,8 @@ ul {
   background-color: rgb(255, 255, 255);
   position: fixed;
   z-index: 10;
-  -webkit-animation: hidden 3s forwards 2s;
-          animation: hidden 3s forwards 2s;
+  -webkit-animation: hidden 2s forwards 1s;
+          animation: hidden 2s forwards 1s;
 }
 
 .loader {
@@ -538,6 +550,12 @@ ul {
   padding-left: 10px;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 800px) {
+  .functioning__all-step {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .functioning__step {
   display: flex;
   position: relative;
@@ -548,10 +566,17 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .functioning__step > i {
-  padding-left: 40px;
+  padding-left: 10%;
+}
+@media screen and (min-width: 800px) {
+  .functioning__step {
+    width: 31%;
+  }
 }
 .functioning__subtext {
-  margin: 0px 0px 0px 25px;
+  display: flex;
+  justify-content: center;
+  margin-right: 8%;
 }
 .functioning__btn {
   position: absolute;
@@ -568,6 +593,20 @@ ul {
   padding: 15px;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 600px) {
+  .overview__layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .overview__layout {
+    gap: 1%;
+    justify-content: space-between;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -575,6 +614,23 @@ ul {
   margin-top: 25px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media screen and (min-width: 600px) {
+  .card {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 24%;
+  }
+}
+.card:hover .anim__heart--colors {
+  -webkit-animation: try 1s forwards;
+          animation: try 1s forwards;
+}
+.card:hover .anim__heart {
+  opacity: 0;
 }
 .card__new::after {
   content: "Nouveau";
@@ -614,15 +670,37 @@ ul {
 .card__icon {
   line-height: 25px;
 }
-.card__icon:hover .svg_transform {
-  fill: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
-  stroke: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
+.card__icon:hover .anim__heart--colors {
+  -webkit-animation: try 1s forwards;
+          animation: try 1s forwards;
 }
-.card:hover .svg_transform {
-  fill: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
-  stroke: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(208, 51, 255) 50%, rgb(255, 121, 218) 100%);
+.card__icon:hover .anim__heart {
+  opacity: 0;
 }
 
+@-webkit-keyframes try {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    z-index: 10;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes try {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    z-index: 10;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menu__img {
   height: 200px;
   -o-object-fit: cover;
@@ -637,11 +715,49 @@ ul {
   top: -15px;
   padding: 30px;
 }
+@media screen and (min-width: 800px) {
+  .menu {
+    padding: 15px;
+  }
+}
+@media screen and (min-width: 950px) {
+  .menu {
+    padding: 30px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .menu__layout {
+    display: flex;
+    gap: 2%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .menu__section {
+    width: 32%;
+  }
+}
+.menu__btn {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+@media screen and (min-width: 800px) {
+  .menu__btn {
+    padding: 30px 40px 0px 40px;
+  }
+}
 .menu__heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 20px 0px 0px;
+}
+.menu__underline {
+  height: 3px;
+  width: 65px;
+  background: mediumaquamarine;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 .menu__title {
   margin: 0;
@@ -650,27 +766,23 @@ ul {
   margin: 0px;
   font-family: "Shrikhand", cursive;
 }
-.menu-part {
+.menu__title--secondary {
+  margin-bottom: 3px;
+}
+.menu__part {
   gap: 25px;
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  -webkit-animation-name: display;
-          animation-name: display;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
-.menu .menu-part:nth-child(1) {
+.menu .menu__proposal:nth-child(1) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-.menu .menu-part:nth-child(2) {
+.menu .menu__proposal:nth-child(2) {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
-.menu .menu-part:nth-child(3) {
+.menu .menu__proposal:nth-child(3) {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
@@ -680,6 +792,13 @@ ul {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  -webkit-animation-name: transitionApparition;
+          animation-name: transitionApparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .menu__proposal:hover .width {
   width: 80%;
@@ -694,21 +813,25 @@ ul {
   transition: 1s ease;
 }
 
-@-webkit-keyframes display {
-  from {
+@-webkit-keyframes transitionApparition {
+  0% {
     opacity: 0;
+    transform: translateY(10px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateX(0px);
   }
 }
 
-@keyframes display {
-  from {
+@keyframes transitionApparition {
+  0% {
     opacity: 0;
+    transform: translateY(10px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateX(0px);
   }
 }
 .proposal__content {
@@ -720,15 +843,21 @@ ul {
 }
 .proposal__heading {
   overflow: hidden;
-  padding-left: 1rem;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .proposal__heading > * {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.proposal__heading > p {
+  margin: 5px;
+}
 .proposal__heading > h3 {
-  margin-bottom: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 20px;
 }
 .proposal__price {
@@ -736,6 +865,9 @@ ul {
   justify-content: flex-end;
   margin: 0rem 1rem 0rem 1rem;
   max-width: 100%;
+}
+.proposal__price > span {
+  font-weight: bold;
 }
 
 .anim {
@@ -759,4 +891,31 @@ ul {
   fill: white;
   height: 30px;
   width: 30px;
+}
+.anim__heart {
+  height: 24px;
+  width: 24px;
+  position: relative;
+}
+.anim__heart--title {
+  position: absolute;
+  right: 49px;
+  height: 27px;
+  width: 27px;
+  opacity: 0;
+}
+.anim__heart--title:hover {
+  -webkit-animation: try 1s forwards;
+          animation: try 1s forwards;
+}
+.anim__heart--title:hover .anim__heart {
+  opacity: 0;
+}
+.anim__heart--colors {
+  position: absolute;
+  right: 13px;
+  bottom: 29px;
+  height: 27px;
+  width: 27px;
+  opacity: 0;
 }/*# sourceMappingURL=main.css.map */
