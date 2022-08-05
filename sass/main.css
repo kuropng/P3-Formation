@@ -543,6 +543,11 @@ ul {
 .functioning {
   padding: 20px;
 }
+@media screen and (min-width: 1000px) {
+  .functioning {
+    padding: 60px;
+  }
+}
 .functioning__title {
   margin: 30px 0px 20px 0px;
 }
@@ -554,6 +559,7 @@ ul {
   .functioning__all-step {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0px;
   }
 }
 .functioning__step {
@@ -571,6 +577,7 @@ ul {
 @media screen and (min-width: 800px) {
   .functioning__step {
     width: 31%;
+    margin-top: 30px;
   }
 }
 .functioning__subtext {
@@ -592,6 +599,11 @@ ul {
 .overview {
   padding: 15px;
   margin-bottom: 40px;
+}
+@media screen and (min-width: 1000px) {
+  .overview {
+    padding: 60px;
+  }
 }
 @media screen and (min-width: 600px) {
   .overview__layout {
@@ -722,7 +734,7 @@ ul {
 }
 @media screen and (min-width: 950px) {
   .menu {
-    padding: 30px;
+    padding: 60px 60px 30px 60px;
   }
 }
 @media screen and (min-width: 800px) {
@@ -853,7 +865,7 @@ ul {
   white-space: nowrap;
 }
 .proposal__heading > p {
-  margin: 5px;
+  margin: 5px 5px 5px 0px;
 }
 .proposal__heading > h3 {
   margin-top: 5px;
@@ -899,16 +911,10 @@ ul {
 }
 .anim__heart--title {
   position: absolute;
-  right: 49px;
+  right: -1px;
+  top: -1px;
   height: 27px;
   width: 27px;
-  opacity: 0;
-}
-.anim__heart--title:hover {
-  -webkit-animation: try 1s forwards;
-          animation: try 1s forwards;
-}
-.anim__heart--title:hover .anim__heart {
   opacity: 0;
 }
 .anim__heart--colors {
@@ -917,5 +923,16 @@ ul {
   bottom: 29px;
   height: 27px;
   width: 27px;
+  opacity: 0;
+}
+
+.container__heart {
+  position: relative;
+}
+.container__heart:hover .anim__heart--title {
+  -webkit-animation: try 1s forwards;
+          animation: try 1s forwards;
+}
+.container__heart:hover .anim__heart {
   opacity: 0;
 }/*# sourceMappingURL=main.css.map */

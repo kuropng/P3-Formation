@@ -29,6 +29,10 @@
 .functioning {
   padding: 20px;
 
+  @media screen and (min-width: 1000px) {
+    padding: 60px;
+  }
+
   &__title{
     margin: 30px 0px 20px 0px;
   }
@@ -40,6 +44,7 @@
     @media screen and (min-width: 800px) {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 0px;
     }
   }
 
@@ -58,6 +63,7 @@
 
     @media screen and (min-width: 800px) {
       width: 31%;
+      margin-top: 30px;
     }
   }
 
@@ -83,6 +89,10 @@
 .overview {
   padding: 15px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 1000px) {
+    padding: 60px;
+  }
 
   &__layout{
     @media screen and (min-width: 600px) {
@@ -210,7 +220,8 @@
   }
 
   @media screen and (min-width:950px){
-    padding: 30px;
+    
+    padding: 60px 60px 30px 60px;
   }
 
   &__layout{
@@ -339,7 +350,7 @@
     }
 
     > p {
-      margin: 5px;
+      margin: 5px 5px 5px 0px;
     }
 
     > h3 {
@@ -392,18 +403,12 @@
 
     &--title{
       position: absolute;
-      right: 49px;
+      right: -1px;
+      top: -1px;
       height: 27px;
       width: 27px;
       opacity: 0;
 
-      &:hover {
-        animation: try 1s forwards;
-      }
-  
-      &:hover .anim__heart {
-        opacity: 0; 
-      }
     }
 
     &--colors{
@@ -417,4 +422,17 @@
   }
 }
 
-.svg_transform{}
+.container {
+
+  &__heart{
+    position: relative;
+
+    &:hover .anim__heart--title{
+      animation: try 1s forwards;
+    }
+
+    &:hover .anim__heart{
+      opacity: 0; 
+    }
+  }
+}
