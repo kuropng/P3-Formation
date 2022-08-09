@@ -1,15 +1,21 @@
 .explanation {
   text-align: center;
-  padding: 35px;
+  padding: 40px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 4px inset;
 
   &__title{
     font-size: 1.8rem;
   }
 
+  > p {
+    font-size: 20px;
+  }
+
   &__subtext{}
 
   &__btn{
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
   
 }
@@ -22,7 +28,7 @@
   }
 
   &__title{
-    margin: 30px 0px 20px 0px;
+    margin: 30px 0px 40px 0px;
   }
 
   &__all-step{
@@ -33,6 +39,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 0px;
+      gap: 2%;
     }
   }
 
@@ -46,38 +53,49 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     > i {
-      padding-left: 10%;
+      padding-left: 8%;
+      color: #666;
     }
 
     @media screen and (min-width: 800px) {
       width: 31%;
       margin-top: 30px;
     }
+
+    &:before {
+      position: absolute;
+      text-align: center;
+      left: -15px;
+      border-radius: 50%;
+      border: 0;
+      line-height: 25px;
+      width: 25px;
+      background-color: $color-primary;
+      color: white;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i})::before{ 
+        content: '#{$i}';
+      }
+    }
   }
 
   &__subtext{
     display: flex;
-    justify-content: center;
+    margin-left: 8%;
     margin-right: 8%;
+    font-weight: 700;
   }
-
-  &__btn{
-    position: absolute;
-    left: -15px;
-    border-radius: 50%;
-    border: 0;
-    line-height: 25px;
-    width: 25px;
-    background-color: $color-primary;
-    color: white;
-  }
-  
-  
 }
 
 .overview {
-  padding: 15px;
+  padding: 20px;
   margin-bottom: 40px;
+
+  > h2 {
+    font-weight: 700;
+  }
 
   @media screen and (min-width: 1000px) {
     padding: 60px;
@@ -117,26 +135,23 @@
     width: 24%;
   }
 
-  &:hover .anim__heart--colors{
-    animation: try 1s forwards;
-  }
-
-  &:hover .anim__heart{
-    opacity: 0;
-  }
-
   &__new::after{
     content: 'Nouveau';
     position: absolute;
-    line-height: 20px;
-    width: 25%;
+    line-height: 25px;
+    width: 17%;
     border-radius: 2px;
     background-color: $color-tertiary;
-    color: #fff;
+    color: #399b71;
+    font-weight: 700;
     font-size: 0.8rem;
     text-align: center;
     right: 10px;
     top: 10px;
+
+    @media screen and (min-width: 1024px) {
+      width: 25%;
+    }
   }
 
   &__img{
@@ -174,6 +189,21 @@
 
     &:hover .anim__heart{
       opacity: 0;
+    }
+  }
+}
+
+.container {
+
+  &__heart{
+    position: relative;
+
+    &:hover .anim__heart--title{
+      animation: try 1s forwards;
+    }
+
+    &:hover .anim__heart{
+      opacity: 0; 
     }
   }
 }

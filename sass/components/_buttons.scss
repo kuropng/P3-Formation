@@ -1,12 +1,12 @@
 .btn {
     border-radius: 30px;
     border: 0px; 
-    padding: 15px;
+    padding: 15px 40px;
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(208,51,255,1) 50%, rgba(255,121,218,1) 100%);
     color: white;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 400;
+    font-size: 1.15rem;
 
     @media screen and (min-width:900px){
       width: 15%;

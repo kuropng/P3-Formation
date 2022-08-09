@@ -10,25 +10,3 @@
 @import "./utils/loaders";
 @import "./pages/accueil";
 @import "./pages/restaurant";
-
-
-
-
-.width {
-  width: 100%;
-}
-
-.container {
-
-  &__heart{
-    position: relative;
-
-    &:hover .anim__heart--title{
-      animation: try 1s forwards;
-    }
-
-    &:hover .anim__heart{
-      opacity: 0; 
-    }
-  }
-}
