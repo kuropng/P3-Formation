@@ -1,4 +1,3 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -438,7 +437,7 @@ h1, h2, h3, h4, h5 {
 .mfp {
   margin: 0px;
   padding: 30px;
-  background-color: #222;
+  background-color: #353535;
   color: #fff;
 }
 .mfp span {
@@ -472,19 +471,25 @@ h1, h2, h3, h4, h5 {
 .header-welcome__content {
   text-align: center;
   padding: 15px 0px 15px 0px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
 }
 .header-welcome__location {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  box-shadow: rgba(88, 88, 88, 0.2) 0px 1px 6px inset, rgba(88, 88, 88, 0.02) 0px 12px 13px inset, rgba(88, 88, 88, 0.15) 0px 1px 5px inset;
+  background-color: #eaeaea;
   padding: 10px 0px 10px 0px;
 }
-.header-welcome__location > p {
-  font-weight: 600;
-  margin: 5px 5px 5px 5px;
+.header-welcome__location > i {
+  margin-left: 30px;
+}
+.header-welcome__search {
+  border: none;
+  background: none;
+  line-height: 25px;
+  padding: 5px 0px 5px 10px;
+  font-weight: 700;
 }
 .header {
   display: flex;
@@ -622,7 +627,7 @@ h1, h2, h3, h4, h5 {
 .explanation {
   text-align: center;
   padding: 40px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 4px inset;
+  background-color: #F6F6F6;
 }
 .explanation__title {
   font-size: 1.8rem;
@@ -665,7 +670,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 25px;
   height: 70px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 .functioning__step > i {
   font-size: 20px;
@@ -714,6 +719,7 @@ h1, h2, h3, h4, h5 {
 .overview {
   padding: 20px;
   margin-bottom: 40px;
+  background-color: #F6F6F6;
 }
 .overview > h2 {
   font-weight: 700;
@@ -819,7 +825,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .menu__img {
-  height: 200px;
+  height: 225px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px;
@@ -827,7 +833,7 @@ h1, h2, h3, h4, h5 {
 
 .menu {
   border-radius: 30px 30px 0px 0px;
-  background-color: #fff;
+  background-color: #f6f6f6;
   position: relative;
   top: -35px;
   padding: 30px;

@@ -1,7 +1,7 @@
 .explanation {
   text-align: center;
   padding: 40px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 4px inset;
+  background-color: #F6F6F6;
 
   &__title{
     font-size: 1.8rem;
@@ -50,7 +50,7 @@
     margin-top: 25px;
     height: 70px;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 
     > i {
       font-size: 20px;
@@ -93,6 +93,7 @@
 .overview {
   padding: 20px;
   margin-bottom: 40px;
+  background-color: #F6F6F6;
 
   > h2 {
     font-weight: 700;
