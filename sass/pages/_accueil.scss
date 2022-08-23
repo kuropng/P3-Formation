@@ -7,11 +7,9 @@
     font-size: 1.8rem;
   }
 
-  > p {
+  p {
     font-size: 20px;
   }
-
-  &__subtext{}
 
   &__btn{
     margin-top: 10px;
@@ -52,7 +50,7 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
 
-    > i {
+    i {
       font-size: 20px;
       padding-left: 8%;
       color: #666;
@@ -95,7 +93,7 @@
   margin-bottom: 40px;
   background-color: #F6F6F6;
 
-  > h2 {
+  h2 {
     font-weight: 700;
   }
 
@@ -116,9 +114,6 @@
       justify-content: space-between;
     }
   }
-
-  &__title{}
-
 }
 
 .card {
