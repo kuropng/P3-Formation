@@ -454,9 +454,6 @@ h1, h2, h3, h4, h5 {
   color: #fff;
   padding-bottom: 10px;
 }
-.mfp fa-solid {
-  color: black;
-}
 
 .header-welcome {
   display: flex;
@@ -674,6 +671,12 @@ h1, h2, h3, h4, h5 {
   height: 70px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+.functioning__step:hover {
+  background-color: hsl(266.7deg, 100%, 96.5%);
+}
+.functioning__step:hover i {
+  color: #9356DC;
 }
 .functioning__step i {
   font-size: 20px;
